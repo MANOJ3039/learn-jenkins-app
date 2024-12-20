@@ -5,6 +5,8 @@ pipeline {
         stage('w/o docker') {
             steps {
                 sh 'echo "without docker"'
+                sh "touch man"
+                sh 'ls -al'
             }
         }
         stage('w docker') {
@@ -17,7 +19,8 @@ pipeline {
             steps {
                 sh 'echo "with docker"'
                 sh 'npm --version'
-                sh "echo 'manoj' > manoj.txt"
+                sh "touch man"
+                sh 'ls -al'
             }
         }
     }
