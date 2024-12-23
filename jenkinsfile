@@ -26,6 +26,7 @@ pipeline {
                 sh '''
                     echo 'test stage'
                     ls build/index.html &>/dev/null && echo "File exists" || echo "File does not exist"
+                    npm test
                 '''
             }
 
