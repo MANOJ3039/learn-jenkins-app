@@ -44,6 +44,14 @@ pipeline {
             }
         }
 
+        stage('Approval') {
+            steps {
+                timeout(time: 1, unit: 'MINUTES') {
+                    input message: 'Approve to proceed to Parallel stage?'
+                }
+            }
+        }
+
         stage('Parallel') {
             parallel {
 
